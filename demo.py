@@ -1,20 +1,19 @@
+#!/usr/bin/env python3
+"""
+Demo version of the Financial Figures Agent that works without OpenAI API key
+This version provides mock analysis for demonstration purposes
+"""
 import os
 import json
 from datetime import datetime
 from typing import Dict, List, Optional
-from openai import OpenAI
-from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
-
-class FinancialFiguresAgent:
+class FinancialFiguresAgentDemo:
     """
-    Autonomous agent for collecting information about key figures influencing capital markets
+    Demo version of the autonomous agent for collecting information about key figures influencing capital markets
     """
     
     def __init__(self):
-        self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
         self.key_figures = self._initialize_key_figures()
     
     def _initialize_key_figures(self) -> Dict[str, Dict]:
@@ -191,7 +190,7 @@ class FinancialFiguresAgent:
                     "country": "USA",
                     "influence_areas": ["consumer_electronics", "services_revenue", "supply_chain"]
                 },
-                "Mark Zuckerberg": {
+                "Mark Zuckerberg": {  
                     "position": "CEO and Co-Founder",
                     "institution": "Meta",
                     "country": "USA",
@@ -228,44 +227,6 @@ class FinancialFiguresAgent:
                     "institution": "Saudi Aramco",
                     "country": "Saudi Arabia",
                     "influence_areas": ["oil_production", "energy_markets", "opec_policy"]
-                },
-                "Greg Hayes": {
-                    "position": "CEO and Chairman",
-                    "institution": "RTX Corporation",
-                    "country": "USA",
-                    "influence_areas": ["aerospace_defense", "military_contracts", "aviation"]
-                },
-                "Jim Taiclet": {
-                    "position": "CEO and President",
-                    "institution": "Lockheed Martin",
-                    "country": "USA",
-                    "influence_areas": ["defense_contractors", "space_systems", "military_technology"]
-                },
-                "Kathy Warden": {
-                    "position": "CEO and President",
-                    "institution": "Northrop Grumman",
-                    "country": "USA",
-                    "influence_areas": ["defense_aerospace", "cybersecurity", "space_technology"]
-                }
-            },
-            "media_analysts": {
-                "Jim Cramer": {
-                    "position": "Host and TV Personality",
-                    "institution": "CNBC",
-                    "country": "USA",
-                    "influence_areas": ["retail_investor_sentiment", "stock_recommendations", "market_commentary"]
-                },
-                "Marko Kolanovic": {
-                    "position": "Chief Market Strategist",
-                    "institution": "JPMorgan",
-                    "country": "USA",
-                    "influence_areas": ["market_strategy", "quantitative_analysis", "institutional_research"]
-                },
-                "Michael Hartnett": {
-                    "position": "Chief Investment Strategist",
-                    "institution": "Bank of America",
-                    "country": "USA",
-                    "influence_areas": ["market_flows", "investor_sentiment", "allocation_strategies"]
                 }
             },
             "israel_key_figures": {
@@ -281,41 +242,11 @@ class FinancialFiguresAgent:
                     "country": "Israel",
                     "influence_areas": ["budget_policy", "taxation", "economic_reforms"]
                 },
-                "Defense Minister": {
-                    "position": "Minister of Defense",
-                    "institution": "Ministry of Defense",
-                    "country": "Israel",
-                    "influence_areas": ["defense_spending", "military_industry", "security_markets"]
-                },
                 "Bank of Israel Governor": {
                     "position": "Governor",
                     "institution": "Bank of Israel",
                     "country": "Israel",
                     "influence_areas": ["monetary_policy", "shekel", "financial_stability"]
-                },
-                "ISA Chairman": {
-                    "position": "Chairman",
-                    "institution": "Israel Securities Authority",
-                    "country": "Israel",
-                    "influence_areas": ["securities_regulation", "capital_markets", "investor_protection"]
-                },
-                "Major Banks CEOs": {
-                    "position": "CEOs of Major Israeli Banks",
-                    "institution": "Bank Hapoalim, Bank Leumi, etc.",
-                    "country": "Israel",
-                    "influence_areas": ["banking_sector", "credit_markets", "fintech"]
-                },
-                "Defense Companies CEOs": {
-                    "position": "CEOs of Defense Companies",
-                    "institution": "Elbit Systems, Rafael, IAI, etc.",
-                    "country": "Israel",
-                    "influence_areas": ["defense_exports", "military_technology", "dual_listed_stocks"]
-                },
-                "TASE CEO": {
-                    "position": "CEO",
-                    "institution": "Tel Aviv Stock Exchange",
-                    "country": "Israel",
-                    "influence_areas": ["capital_markets", "stock_exchange", "market_structure"]
                 }
             }
         }
@@ -340,109 +271,98 @@ class FinancialFiguresAgent:
         return list(self.key_figures.keys())
     
     def analyze_market_influence(self, figure_name: str, recent_news: str = None) -> str:
-        """Analyze a figure's potential market influence using AI"""
+        """Provide mock analysis of a figure's potential market influence"""
         figure_info = self.get_figure_info(figure_name)
         if not figure_info:
             return f"Figure '{figure_name}' not found in database."
         
-        system_prompt = """You are a financial markets expert specializing in analyzing how key financial figures influence capital markets. 
-        Provide concise, actionable insights about market impact, focusing on:
-        1. Current market influence
-        2. Key areas of impact
-        3. Recent developments or statements
-        4. Potential market implications
+        # Mock analysis based on figure's role and influence areas
+        mock_analyses = {
+            "Jerome Powell": """📊 Current Market Influence: VERY HIGH
+As Fed Chairman, Powell's statements have immediate impact on:
+• Interest rates and bond markets • Dollar strength/weakness  
+• Stock market valuations • Inflation expectations
+
+🎯 Key Impact Areas: Federal funds rate decisions, forward guidance, employment targets
+⚡ Market Implications: Dovish/hawkish tone can move markets 2-3% instantly""",
+            
+            "Jensen Huang": """📊 Current Market Influence: VERY HIGH (AI/Tech)
+NVIDIA CEO driving AI revolution with massive market impact:
+• GPU demand for AI training • Data center growth • Semiconductor leadership
+
+🎯 Key Impact Areas: AI chip market (80%+ share), earnings guidance, product launches
+⚡ Market Implications: Q2 2024 earnings drove NVDA up 25% in single day""",
+            
+            "Warren Buffett": """📊 Current Market Influence: HIGH (Value Investing)
+Berkshire moves and Buffett's statements influence:
+• Value investing sentiment • Large cap selections • Market timing signals
+
+🎯 Key Impact Areas: 13F filings, annual letters, stock purchases/sales
+⚡ Market Implications: Apple position changes directly affect AAPL price"""
+        }
         
-        Be specific and data-driven in your analysis."""
-        
-        user_prompt = f"""Analyze the market influence of {figure_name}:
-        
-        Position: {figure_info['position']}
-        Institution: {figure_info['institution']}
-        Country: {figure_info['country']}
-        Main influence areas: {', '.join(figure_info['influence_areas'])}
-        
-        {f'Recent news context: {recent_news}' if recent_news else ''}
-        """
-        
-        try:
-            response = self.client.chat.completions.create(
-                model="gpt-4",
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt}
-                ],
-                max_tokens=800
-            )
-            return response.choices[0].message.content
-        except Exception as e:
-            return f"Error analyzing market influence: {str(e)}"
+        return mock_analyses.get(figure_name, f"""📊 Market Influence Analysis: {figure_name}
+Position: {figure_info['position']} at {figure_info['institution']}
+🎯 Primary Areas: {', '.join(figure_info['influence_areas'][:2])}
+⚡ Impact: Monitor statements and decisions for market-moving information""")
     
-    def generate_market_update_report(self, category: str = None) -> str:
-        """Generate a comprehensive market update report for key figures"""
-        if category and category not in self.key_figures:
-            return f"Category '{category}' not found."
-        
-        categories_to_analyze = [category] if category else ["central_banks", "regulators", "investors_asset_managers"]
-        
-        system_prompt = """You are a financial markets analyst creating a briefing report on key market influencers. 
-        Focus on recent developments, statements, and potential market implications. 
-        Structure your response clearly with categories and bullet points."""
-        
-        figures_summary = []
-        for cat in categories_to_analyze:
-            cat_figures = self.key_figures.get(cat, {})
-            figures_summary.append(f"\n{cat.replace('_', ' ').title()}:")
-            for name, info in list(cat_figures.items())[:3]:  # Limit to top 3 per category
-                figures_summary.append(f"- {name}: {info['position']} at {info['institution']}")
-        
-        user_prompt = f"""Generate a market influence briefing for these key financial figures:
-        {''.join(figures_summary)}
-        
-        Focus on their current potential impact on capital markets, recent policy signals, and market-moving potential.
-        """
-        
-        try:
-            response = self.client.chat.completions.create(
-                model="gpt-4",
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt}
-                ],
-                max_tokens=1500
-            )
-            return response.choices[0].message.content
-        except Exception as e:
-            return f"Error generating report: {str(e)}"
+    def generate_market_update_report(self) -> str:
+        """Generate a comprehensive demo market report"""
+        return f"""🏦 FINANCIAL MARKETS INTELLIGENCE BRIEFING
+📅 {datetime.now().strftime('%Y-%m-%d %H:%M')} | Monitoring {sum(len(cat) for cat in self.key_figures.values())} Key Figures
+
+🔴 HIGH PRIORITY MONITORING:
+• Jerome Powell (Fed) - Next FOMC meeting critical for rate policy
+• Jensen Huang (NVIDIA) - Q4 earnings guidance will impact entire AI sector  
+• Jamie Dimon (JPM) - Banking outlook and credit conditions commentary
+
+📊 SECTOR ANALYSIS:
+Central Banks: Rate decisions pending from Fed, ECB, BoE, BoJ
+Tech Leadership: AI infrastructure spending driving semiconductor demand
+Asset Management: ESG flows and allocation shifts being monitored
+
+⚠️ RISK FACTORS:
+• Geopolitical tensions affecting energy and defense sectors
+• Regulatory changes in crypto and big tech
+• Credit market conditions and banking sector stress
+
+🎯 NEXT CATALYSTS: FOMC meetings, quarterly earnings, regulatory announcements"""
 
 def main():
-    """Main function to demonstrate the Financial Figures Agent"""
-    print("🏦 Financial Markets Key Figures Intelligence Agent")
-    print("=" * 60)
+    """Demo the Financial Figures Agent capabilities"""
+    print("🏦 Financial Markets Key Figures Intelligence Agent (Demo)")
+    print("=" * 65)
     
-    agent = FinancialFiguresAgent()
+    agent = FinancialFiguresAgentDemo()
     
-    print(f"\n📊 Monitoring {sum(len(cat) for cat in agent.key_figures.values())} key financial figures")
-    print(f"📋 Categories available: {', '.join(agent.get_all_categories())}")
+    print(f"\n📊 Monitoring {sum(len(cat) for cat in agent.key_figures.values())} key figures")
+    print(f"📋 Categories: {len(agent.get_all_categories())} sectors covered")
     
-    # Example 1: Analyze a specific figure
-    print("\n🔍 Example Analysis - Jerome Powell:")
-    print("-" * 40)
-    powell_analysis = agent.analyze_market_influence("Jerome Powell")
-    print(powell_analysis)
+    # Show key figures by category
+    print("\n🔍 KEY FIGURES BY SECTOR:")
+    for category in agent.get_all_categories():
+        figures = agent.list_figures_by_category(category)
+        print(f"\n{category.replace('_', ' ').title()}: {len(figures)} figures")
+        for figure in figures[:3]:  # Show first 3
+            info = agent.get_figure_info(figure, category)
+            print(f"  • {figure} - {info['institution']}")
     
-    # Example 2: Generate market briefing
-    print("\n📈 Market Briefing - Central Banks & Regulators:")
-    print("-" * 50)
-    briefing = agent.generate_market_update_report("central_banks")
-    print(briefing)
+    # Analysis examples
+    print("\n" + "="*65)
+    print("📈 SAMPLE MARKET INFLUENCE ANALYSIS:")
     
-    # Example 3: List figures by category
-    print("\n👥 Tech CEOs monitored:")
-    print("-" * 25)
-    tech_figures = agent.list_figures_by_category("tech_ceos")
-    for figure in tech_figures[:5]:  # Show first 5
-        info = agent.get_figure_info(figure, "tech_ceos")
-        print(f"• {figure} - {info['institution']}")
+    key_figures = ["Jerome Powell", "Jensen Huang", "Warren Buffett"]
+    for figure in key_figures:
+        print(f"\n{figure}:")
+        print("-" * 30)
+        print(agent.analyze_market_influence(figure))
+    
+    # Market briefing
+    print("\n" + "="*65)
+    print("📋 MARKET BRIEFING:")
+    print(agent.generate_market_update_report())
+    
+    print(f"\n✅ Demo completed - Agent successfully monitors financial market key figures!")
 
 if __name__ == "__main__":
     main()
