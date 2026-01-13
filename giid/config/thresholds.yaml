@@ -1,0 +1,132 @@
+# Scoring Thresholds Configuration
+# Impact score thresholds and alert levels
+
+# Impact scoring (0-120 scale)
+impact_scoring:
+  components:
+    source_reliability:
+      max_score: 20
+      tier_1_source: 20
+      tier_2_source: 15
+      tier_3_source: 10
+      unverified: 5
+    
+    financial_magnitude:
+      max_score: 25
+      thresholds:
+        - amount: 10000000000  # $10B+
+          score: 25
+        - amount: 5000000000   # $5B+
+          score: 20
+        - amount: 1000000000   # $1B+
+          score: 15
+        - amount: 500000000    # $500M+
+          score: 10
+        - amount: 100000000    # $100M+
+          score: 5
+    
+    project_stage:
+      max_score: 15
+      production: 15
+      construction: 12
+      financing: 10
+      feasibility: 7
+      exploration: 5
+    
+    regulatory_severity:
+      max_score: 20
+      revocation: 20
+      suspension: 18
+      denial: 16
+      conditional_approval: 12
+      approval: 10
+      application: 5
+    
+    thesis_relevance:
+      max_score: 20
+      direct_match: 20
+      sector_match: 15
+      tangential: 10
+      peripheral: 5
+    
+    institutional_signal:
+      max_score: 20
+      rating_action: 18-20
+      sector_call_tier1: 14-18
+      thematic_macro: 10-14
+      research_note: 5-10
+
+# Alert thresholds
+alert_levels:
+  critical:
+    threshold: 90
+    action: "immediate_notification"
+    color: "red"
+    
+  high:
+    threshold: 70
+    action: "daily_report_top_section"
+    color: "orange"
+    
+  medium:
+    threshold: 50
+    action: "daily_report_standard"
+    color: "yellow"
+    
+  low:
+    threshold: 30
+    action: "archive_only"
+    color: "green"
+
+# Confidence levels
+confidence:
+  high:
+    criteria:
+      - "tier_1_source"
+      - "multiple_confirmations"
+      - "official_filing"
+    threshold: 85
+    
+  medium:
+    criteria:
+      - "tier_2_source"
+      - "single_confirmation"
+      - "analyst_report"
+    threshold: 60
+    
+  low:
+    criteria:
+      - "unverified_source"
+      - "no_confirmation"
+      - "rumor"
+    threshold: 30
+
+# Report generation thresholds
+reporting:
+  include_in_brief:
+    min_score: 70
+  
+  include_in_deep_dive:
+    min_score: 80
+  
+  max_events_in_brief: 12
+  
+  max_events_in_deep_dive: 5
+  
+  executive_summary_lines: 12
+
+# Deduplication thresholds
+deduplication:
+  similarity_threshold: 0.85  # 85% similar = duplicate
+  time_window_hours: 24       # Consider events within 24h
+  clustering_threshold: 0.70  # 70% similar = related cluster
+
+# Flow signal thresholds
+flow_signals:
+  significant_flow:
+    min_absolute: 100000000   # $100M
+    min_percentage: 2.0       # 2% of AUM
+  
+  institutional_rotation:
+    min_concurrent_signals: 3
+    time_window_days: 5

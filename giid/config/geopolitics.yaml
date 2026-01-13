@@ -1,0 +1,144 @@
+# Geopolitical Configuration
+# Strategic chokepoints, regions, and conflict zones
+
+chokepoints:
+  - name: "Strait of Hormuz"
+    region: "Persian Gulf"
+    significance: "20% of global oil supply"
+    countries:
+      - "Iran"
+      - "Oman"
+    
+  - name: "Suez Canal"
+    region: "Egypt"
+    significance: "12% of global trade"
+    countries:
+      - "Egypt"
+    
+  - name: "Bab el-Mandeb Strait"
+    region: "Red Sea"
+    significance: "Oil tanker route"
+    countries:
+      - "Yemen"
+      - "Djibouti"
+      - "Eritrea"
+    
+  - name: "Strait of Malacca"
+    region: "Southeast Asia"
+    significance: "25% of traded goods"
+    countries:
+      - "Malaysia"
+      - "Singapore"
+      - "Indonesia"
+    
+  - name: "Turkish Straits"
+    region: "Black Sea"
+    significance: "Russian energy exports"
+    countries:
+      - "Turkey"
+    
+  - name: "Panama Canal"
+    region: "Central America"
+    significance: "Trans-oceanic shipping"
+    countries:
+      - "Panama"
+
+conflict_zones:
+  - name: "Ukraine/Russia"
+    type: "active_conflict"
+    impact_sectors:
+      - "Energy"
+      - "Agriculture"
+      - "Metals"
+    
+  - name: "Middle East"
+    type: "geopolitical_tension"
+    impact_sectors:
+      - "Energy"
+      - "Shipping"
+    
+  - name: "South China Sea"
+    type: "territorial_dispute"
+    impact_sectors:
+      - "Shipping"
+      - "Technology"
+    
+  - name: "Taiwan Strait"
+    type: "geopolitical_tension"
+    impact_sectors:
+      - "Semiconductors"
+      - "Technology"
+      - "Shipping"
+    
+  - name: "Red Sea/Yemen"
+    type: "active_conflict"
+    impact_sectors:
+      - "Shipping"
+      - "Energy"
+
+sanction_regimes:
+  - name: "Russia"
+    type: "comprehensive"
+    sectors:
+      - "Energy"
+      - "Financial Services"
+      - "Technology"
+    
+  - name: "Iran"
+    type: "comprehensive"
+    sectors:
+      - "Energy"
+      - "Financial Services"
+    
+  - name: "North Korea"
+    type: "comprehensive"
+    sectors:
+      - "All"
+    
+  - name: "Venezuela"
+    type: "sectoral"
+    sectors:
+      - "Energy"
+      - "Financial Services"
+
+strategic_resources:
+  - name: "Rare Earth Elements"
+    primary_suppliers:
+      - "China"
+      - "United States"
+      - "Australia"
+    
+  - name: "Lithium"
+    primary_suppliers:
+      - "Australia"
+      - "Chile"
+      - "China"
+      - "Argentina"
+    
+  - name: "Uranium"
+    primary_suppliers:
+      - "Kazakhstan"
+      - "Canada"
+      - "Australia"
+      - "Niger"
+    
+  - name: "Natural Gas"
+    primary_suppliers:
+      - "Russia"
+      - "United States"
+      - "Qatar"
+      - "Norway"
+
+# Keywords for geopolitical events
+event_keywords:
+  - "sanctions"
+  - "embargo"
+  - "military action"
+  - "blockade"
+  - "trade restrictions"
+  - "export controls"
+  - "license denial"
+  - "strategic partnership"
+  - "alliance"
+  - "treaty"
+  - "diplomatic crisis"

@@ -1,0 +1,135 @@
+# Rating Agencies Configuration
+# Major credit rating agencies and their sources
+
+rating_agencies:
+  moodys:
+    name: "Moody's Investors Service"
+    domains:
+      - "moodys.com"
+    weight: 25
+    ratings:
+      - "Aaa"
+      - "Aa1"
+      - "Aa2"
+      - "Aa3"
+      - "A1"
+      - "A2"
+      - "A3"
+      - "Baa1"
+      - "Baa2"
+      - "Baa3"
+      - "Ba1"
+      - "Ba2"
+      - "Ba3"
+      - "B1"
+      - "B2"
+      - "B3"
+      - "Caa1"
+      - "Caa2"
+      - "Caa3"
+      - "Ca"
+      - "C"
+    
+  sp:
+    name: "S&P Global Ratings"
+    domains:
+      - "spglobal.com"
+      - "standardandpoors.com"
+    weight: 25
+    ratings:
+      - "AAA"
+      - "AA+"
+      - "AA"
+      - "AA-"
+      - "A+"
+      - "A"
+      - "A-"
+      - "BBB+"
+      - "BBB"
+      - "BBB-"
+      - "BB+"
+      - "BB"
+      - "BB-"
+      - "B+"
+      - "B"
+      - "B-"
+      - "CCC+"
+      - "CCC"
+      - "CCC-"
+      - "CC"
+      - "C"
+      - "D"
+    
+  fitch:
+    name: "Fitch Ratings"
+    domains:
+      - "fitchratings.com"
+    weight: 25
+    ratings:
+      - "AAA"
+      - "AA+"
+      - "AA"
+      - "AA-"
+      - "A+"
+      - "A"
+      - "A-"
+      - "BBB+"
+      - "BBB"
+      - "BBB-"
+      - "BB+"
+      - "BB"
+      - "BB-"
+      - "B+"
+      - "B"
+      - "B-"
+      - "CCC"
+      - "CC"
+      - "C"
+      - "RD"
+      - "D"
+
+# Rating action types and their impact
+rating_actions:
+  upgrade:
+    keywords:
+      - "upgraded"
+      - "raised"
+      - "improved outlook"
+    impact_score: 18
+    
+  downgrade:
+    keywords:
+      - "downgraded"
+      - "lowered"
+      - "cut rating"
+    impact_score: 20
+    
+  outlook_positive:
+    keywords:
+      - "positive outlook"
+      - "outlook to positive"
+    impact_score: 14
+    
+  outlook_negative:
+    keywords:
+      - "negative outlook"
+      - "outlook to negative"
+    impact_score: 16
+    
+  watch_positive:
+    keywords:
+      - "watch positive"
+      - "review for upgrade"
+    impact_score: 12
+    
+  watch_negative:
+    keywords:
+      - "watch negative"
+      - "review for downgrade"
+    impact_score: 14
+    
+  affirmed:
+    keywords:
+      - "affirmed"
+      - "confirmed"
+    impact_score: 5

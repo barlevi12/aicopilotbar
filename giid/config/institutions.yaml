@@ -1,0 +1,95 @@
+# Institutional Sources Configuration
+# Tier-1 banks and institutional sources
+
+tier_1_banks:
+  - name: "UBS"
+    domains:
+      - "ubs.com"
+    weight: 20
+    
+  - name: "Goldman Sachs"
+    domains:
+      - "goldmansachs.com"
+      - "gs.com"
+    weight: 20
+    
+  - name: "Morgan Stanley"
+    domains:
+      - "morganstanley.com"
+    weight: 20
+    
+  - name: "JPMorgan Chase"
+    domains:
+      - "jpmorgan.com"
+      - "jpmorganchase.com"
+    weight: 20
+    
+  - name: "Citigroup"
+    domains:
+      - "citigroup.com"
+      - "citi.com"
+    weight: 20
+    
+  - name: "Bank of America"
+    domains:
+      - "bankofamerica.com"
+      - "bofa.com"
+    weight: 18
+    
+  - name: "Deutsche Bank"
+    domains:
+      - "db.com"
+      - "deutschebank.com"
+    weight: 18
+    
+  - name: "Credit Suisse"
+    domains:
+      - "credit-suisse.com"
+    weight: 18
+    
+  - name: "Barclays"
+    domains:
+      - "barclays.com"
+    weight: 18
+    
+  - name: "HSBC"
+    domains:
+      - "hsbc.com"
+    weight: 18
+
+tier_2_institutions:
+  - name: "Bloomberg"
+    domains:
+      - "bloomberg.com"
+    weight: 15
+    
+  - name: "Reuters"
+    domains:
+      - "reuters.com"
+    weight: 15
+    
+  - name: "Financial Times"
+    domains:
+      - "ft.com"
+    weight: 15
+
+central_banks:
+  - name: "Federal Reserve"
+    domains:
+      - "federalreserve.gov"
+    weight: 25
+    
+  - name: "European Central Bank"
+    domains:
+      - "ecb.europa.eu"
+    weight: 25
+    
+  - name: "Bank of England"
+    domains:
+      - "bankofengland.co.uk"
+    weight: 25
+    
+  - name: "Bank of Japan"
+    domains:
+      - "boj.or.jp"
+    weight: 25

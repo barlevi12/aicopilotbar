@@ -1,0 +1,134 @@
+[
+  {
+    "id": "evt_001",
+    "timestamp": "2024-01-13T14:30:00Z",
+    "event_type": "rating_change",
+    "sector": "Uranium",
+    "headline": "Moody's upgrades Global Mining Corp to Baa2 on strong uranium demand",
+    "summary": "Moody's upgraded Global Mining Corp to Baa2 from Baa3. Outlook stable. Driven by robust uranium market fundamentals and improved cash flow from increased production.",
+    "source": "moodys.com",
+    "source_tier": 1,
+    "confidence": "high",
+    "institutional_source": "Moody's",
+    "impact_score": 92,
+    "linked_assets": ["GMC", "URA"],
+    "tags": ["uranium", "rating", "nuclear"],
+    "region": null,
+    "people_mentioned": [],
+    "raw_data": {
+      "agency": "Moodys",
+      "action": "upgrade",
+      "old_rating": "Baa3",
+      "new_rating": "Baa2",
+      "outlook": "stable"
+    }
+  },
+  {
+    "id": "evt_002",
+    "timestamp": "2024-01-13T11:15:00Z",
+    "event_type": "flow_signal",
+    "sector": "Uranium",
+    "headline": "URA sees $250M inflow amid uranium supply concerns",
+    "summary": "Global X Uranium ETF (URA) recorded $250M inflow over past week. Year-to-date inflows now exceed $1.2B. Largest weekly inflow since Q2 2023.",
+    "source": "etfdb.com",
+    "source_tier": 3,
+    "confidence": "medium",
+    "institutional_source": null,
+    "impact_score": 75,
+    "linked_assets": ["URA", "uranium"],
+    "tags": ["uranium"],
+    "region": null,
+    "people_mentioned": [],
+    "raw_data": {
+      "ticker": "URA",
+      "flow_type": "inflow",
+      "amount": 250000000,
+      "period": "weekly"
+    }
+  },
+  {
+    "id": "evt_003",
+    "timestamp": "2024-01-13T09:45:00Z",
+    "event_type": "sanctions",
+    "sector": "Energy",
+    "headline": "US Treasury imposes new sanctions on Iranian energy entities",
+    "summary": "OFAC designated 12 entities involved in Iranian petroleum trade. Restrictions effective immediately. Expected impact on Middle East oil flows and insurance markets.",
+    "source": "treasury.gov",
+    "source_tier": 1,
+    "confidence": "high",
+    "institutional_source": null,
+    "impact_score": 88,
+    "linked_assets": ["XLE", "crude_oil"],
+    "tags": ["sanctions"],
+    "region": "Middle East",
+    "people_mentioned": ["Janet Yellen"],
+    "raw_data": {
+      "type": "sanctions",
+      "entities_count": 12
+    }
+  },
+  {
+    "id": "evt_004",
+    "timestamp": "2024-01-13T08:20:00Z",
+    "event_type": "geopolitical_event",
+    "sector": "Shipping",
+    "headline": "Red Sea tensions escalate: major shipping lines reroute via Cape of Good Hope",
+    "summary": "Three major container shipping lines announced indefinite rerouting around Africa. Adds 10-14 days to Europe-Asia transit. Expected impact on freight rates and supply chains.",
+    "source": "reuters.com",
+    "source_tier": 2,
+    "confidence": "high",
+    "institutional_source": null,
+    "impact_score": 82,
+    "linked_assets": [],
+    "tags": [],
+    "region": "Middle East",
+    "people_mentioned": [],
+    "raw_data": {
+      "chokepoint": "Bab el-Mandeb Strait"
+    }
+  },
+  {
+    "id": "evt_005",
+    "timestamp": "2024-01-13T15:00:00Z",
+    "event_type": "ipo_announcement",
+    "sector": "Critical Minerals",
+    "headline": "Lithium extraction startup files for $800M IPO",
+    "summary": "Advanced Lithium Technologies filed S-1 for $800M IPO. Company operates direct lithium extraction facilities in Nevada. Goldman Sachs and Morgan Stanley lead underwriters.",
+    "source": "sec.gov",
+    "source_tier": 1,
+    "confidence": "high",
+    "institutional_source": null,
+    "impact_score": 78,
+    "linked_assets": ["LIT"],
+    "tags": ["lithium", "ipo"],
+    "region": "United States",
+    "people_mentioned": [],
+    "raw_data": {
+      "filing_type": "S-1",
+      "amount": 800000000,
+      "underwriters": ["Goldman Sachs", "Morgan Stanley"]
+    }
+  },
+  {
+    "id": "evt_006",
+    "timestamp": "2024-01-13T13:30:00Z",
+    "event_type": "regulatory_approval",
+    "sector": "Uranium",
+    "headline": "Energy Corp receives uranium mining license approval in Wyoming",
+    "summary": "Energy Corp (NYSE: ENGY) announced regulatory approval for uranium mining operations. Expected production: 2M lbs/year starting Q3 2024. Project capex estimated at $450M.",
+    "source": "sec.gov",
+    "source_tier": 1,
+    "confidence": "high",
+    "institutional_source": null,
+    "impact_score": 85,
+    "linked_assets": ["ENGY", "URA"],
+    "tags": ["uranium", "regulatory"],
+    "region": "United States",
+    "people_mentioned": [],
+    "raw_data": {
+      "filing_type": "8-K",
+      "production_capacity": 2000000,
+      "capex": 450000000
+    }
+  }
+]
