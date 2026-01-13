@@ -190,16 +190,38 @@ The system generates a comprehensive daily brief including:
 
 ## Testing
 
-```bash
-# Run all tests
-pytest tests/
+The GIID system includes comprehensive tests. However, due to the package structure, tests should be run after installing the package:
 
-# Run specific test module
-pytest tests/test_collectors.py
+```bash
+# Install in development mode
+pip install -e .
+
+# Run all tests
+pytest tests/ -v
 
 # Run with coverage
 pytest --cov=src tests/
 ```
+
+### Quick Verification
+
+To verify the system works without installing, simply run the main script:
+
+```bash
+# Run the full GIID pipeline
+python src/main.py
+
+# This will:
+# 1. Collect events from all sources
+# 2. Verify and score events
+# 3. Generate a daily brief report
+# 4. Save data to data/ and reports/ directories
+```
+
+Expected output:
+- Daily brief report: `reports/daily_brief_TIMESTAMP.md`
+- Events data: `data/events_TIMESTAMP.json`
+- Log file: `giid.log`
 
 ## GitHub Actions Integration
 

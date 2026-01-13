@@ -45,7 +45,7 @@ async def run_giid():
     logger.info("=" * 80)
     
     # Setup paths
-    base_dir = Path(__file__).parent
+    base_dir = Path(__file__).parent.parent  # Go up to giid/ directory
     config_dir = base_dir / 'config'
     data_dir = base_dir / 'data'
     reports_dir = base_dir / 'reports'

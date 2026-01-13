@@ -1,0 +1,121 @@
+[
+  {
+    "id": "1f2569394618da620c008734cbf080c2",
+    "timestamp": "2026-01-13T22:28:02.889349",
+    "event_type": "rating_change",
+    "sector": "uranium",
+    "headline": "Moody's upgrades mining company to Baa2 on strong uranium demand",
+    "summary": "Moody's upgraded Global Mining Corp to Baa2 from Baa3. Outlook stable. Driven by robust uranium market fundamentals and improved cash flow.",
+    "source": "moodys.com",
+    "source_tier": 1,
+    "confidence": "high",
+    "impact_score": 81,
+    "linked_assets": [],
+    "tags": [
+      "uranium",
+      "rating"
+    ]
+  },
+  {
+    "id": "37e22e9bc2daff60d819dd03e4373eaf",
+    "timestamp": "2026-01-13T21:28:02.887986",
+    "event_type": "regulatory_approval",
+    "sector": "uranium",
+    "headline": "Energy Corp files 8-K on uranium mining license approval",
+    "summary": "Energy Corp (NYSE: ENGY) announced regulatory approval for uranium mining operations in Wyoming. Expected production: 2M lbs/year.",
+    "source": "sec.gov",
+    "source_tier": 1,
+    "confidence": "high",
+    "impact_score": 78,
+    "linked_assets": [
+      "ENGY"
+    ],
+    "tags": [
+      "uranium"
+    ]
+  },
+  {
+    "id": "35b5ce8c828e8b814c5ff486c517092b",
+    "timestamp": "2026-01-13T20:28:02.889255",
+    "event_type": "sanctions",
+    "sector": "Energy",
+    "headline": "US Treasury imposes new sanctions on Iranian energy entities",
+    "summary": "OFAC designated 12 entities involved in Iranian petroleum trade. Restrictions effective immediately.",
+    "source": "treasury.gov",
+    "source_tier": 1,
+    "confidence": "high",
+    "impact_score": 76,
+    "linked_assets": [],
+    "tags": [
+      "sanctions"
+    ]
+  },
+  {
+    "id": "c90ee37793ce2bd76449a1bd6ace3cc2",
+    "timestamp": "2026-01-13T18:28:02.887986",
+    "event_type": "regulatory_approval",
+    "sector": "critical_minerals",
+    "headline": "Critical Minerals Inc. announces $500M financing for lithium project",
+    "summary": "Critical Minerals Inc. secured $500M in project financing from JPMorgan and Goldman Sachs for lithium extraction facility in Nevada.",
+    "source": "prnewswire.com",
+    "source_tier": 3,
+    "confidence": "low",
+    "impact_score": 63,
+    "linked_assets": [],
+    "tags": [
+      "lithium",
+      "gold"
+    ]
+  },
+  {
+    "id": "72d0d48fc0f7ba4e0431fe9d63f286a4",
+    "timestamp": "2026-01-13T17:28:02.889416",
+    "event_type": "flow_signal",
+    "sector": "General",
+    "headline": "COT Report: Large speculators increase gold net long positions",
+    "summary": "Non-commercial traders increased net long gold positions by 15% week-over-week, reaching highest level since 2020.",
+    "source": "cftc.gov",
+    "source_tier": 1,
+    "confidence": "high",
+    "impact_score": 58,
+    "linked_assets": [],
+    "tags": [
+      "gold"
+    ]
+  },
+  {
+    "id": "75cb22166f5f2c0d6fc40814b122208e",
+    "timestamp": "2026-01-13T19:28:02.889416",
+    "event_type": "flow_signal",
+    "sector": "uranium",
+    "headline": "URA sees $250M inflow amid uranium supply concerns",
+    "summary": "Global X Uranium ETF (URA) recorded $250M inflow over past week. Year-to-date inflows now exceed $1.2B.",
+    "source": "etfdb.com",
+    "source_tier": 2,
+    "confidence": "medium",
+    "impact_score": 49,
+    "linked_assets": [
+      "URA",
+      "uranium"
+    ],
+    "tags": [
+      "uranium"
+    ]
+  },
+  {
+    "id": "6dff426b8676a0b4933cdc01b8d87ef5",
+    "timestamp": "2026-01-13T21:28:02.889488",
+    "event_type": "geopolitical_event",
+    "sector": "General",
+    "headline": "Gold breaks above $2,100/oz on geopolitical tensions",
+    "summary": "Gold prices surged 2.5% to reach $2,120/oz amid escalating Middle East tensions and safe-haven demand.",
+    "source": "lbma.org.uk",
+    "source_tier": 4,
+    "confidence": "low",
+    "impact_score": 34,
+    "linked_assets": [],
+    "tags": [
+      "gold"
+    ]
+  }
+]
