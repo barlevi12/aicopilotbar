@@ -1,0 +1,106 @@
+# Capital Flows Configuration
+# ETFs, funds, and COT settings
+
+etf_watchlist:
+  equity:
+    - ticker: "SPY"
+      name: "SPDR S&P 500 ETF"
+      category: "large_cap"
+      
+    - ticker: "QQQ"
+      name: "Invesco QQQ Trust"
+      category: "tech"
+      
+    - ticker: "IWM"
+      name: "iShares Russell 2000 ETF"
+      category: "small_cap"
+      
+    - ticker: "EEM"
+      name: "iShares MSCI Emerging Markets ETF"
+      category: "emerging_markets"
+      
+    - ticker: "GLD"
+      name: "SPDR Gold Shares"
+      category: "gold"
+      
+    - ticker: "SLV"
+      name: "iShares Silver Trust"
+      category: "silver"
+      
+    - ticker: "XLE"
+      name: "Energy Select Sector SPDR"
+      category: "energy"
+      
+    - ticker: "URA"
+      name: "Global X Uranium ETF"
+      category: "uranium"
+      
+    - ticker: "LIT"
+      name: "Global X Lithium & Battery Tech ETF"
+      category: "critical_minerals"
+      
+  bonds:
+    - ticker: "AGG"
+      name: "iShares Core US Aggregate Bond ETF"
+      category: "investment_grade"
+      
+    - ticker: "TLT"
+      name: "iShares 20+ Year Treasury Bond ETF"
+      category: "long_treasury"
+      
+    - ticker: "HYG"
+      name: "iShares iBoxx High Yield Corporate Bond ETF"
+      category: "high_yield"
+      
+    - ticker: "EMB"
+      name: "iShares JP Morgan USD Emerging Markets Bond ETF"
+      category: "emerging_markets_debt"
+
+# COT (Commitments of Traders) settings
+cot_settings:
+  data_sources:
+    - "CFTC"
+  
+  categories:
+    - name: "Commercial"
+      description: "Hedgers and producers"
+      
+    - name: "Non-Commercial"
+      description: "Large speculators and funds"
+      
+    - name: "Non-Reportable"
+      description: "Small traders"
+  
+  instruments:
+    - name: "Gold"
+      cftc_code: "088691"
+      
+    - name: "Silver"
+      cftc_code: "084691"
+      
+    - name: "Crude Oil"
+      cftc_code: "067651"
+      
+    - name: "Natural Gas"
+      cftc_code: "023651"
+      
+    - name: "Copper"
+      cftc_code: "085692"
+      
+    - name: "USD Index"
+      cftc_code: "098662"
+
+# Flow thresholds
+flow_thresholds:
+  inflow_low: 100000000      # $100M
+  inflow_medium: 500000000   # $500M
+  inflow_high: 1000000000    # $1B
+  
+  outflow_low: 100000000
+  outflow_medium: 500000000
+  outflow_high: 1000000000
+  
+  # Percentage thresholds
+  percentage_low: 2.0        # 2% AUM
+  percentage_medium: 5.0     # 5% AUM
+  percentage_high: 10.0      # 10% AUM

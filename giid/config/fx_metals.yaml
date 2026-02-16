@@ -1,0 +1,107 @@
+# FX & Precious Metals Configuration
+# Currency pairs and metals to monitor
+
+currency_pairs:
+  majors:
+    - pair: "USD/EUR"
+      name: "US Dollar / Euro"
+      
+    - pair: "USD/JPY"
+      name: "US Dollar / Japanese Yen"
+      
+    - pair: "GBP/USD"
+      name: "British Pound / US Dollar"
+      
+    - pair: "USD/CHF"
+      name: "US Dollar / Swiss Franc"
+      
+    - pair: "AUD/USD"
+      name: "Australian Dollar / US Dollar"
+      
+    - pair: "USD/CAD"
+      name: "US Dollar / Canadian Dollar"
+  
+  emerging_markets:
+    - pair: "USD/CNY"
+      name: "US Dollar / Chinese Yuan"
+      region: "Asia"
+      
+    - pair: "USD/INR"
+      name: "US Dollar / Indian Rupee"
+      region: "Asia"
+      
+    - pair: "USD/BRL"
+      name: "US Dollar / Brazilian Real"
+      region: "Latin America"
+      
+    - pair: "USD/MXN"
+      name: "US Dollar / Mexican Peso"
+      region: "Latin America"
+      
+    - pair: "USD/ZAR"
+      name: "US Dollar / South African Rand"
+      region: "Africa"
+      
+    - pair: "USD/TRY"
+      name: "US Dollar / Turkish Lira"
+      region: "Middle East"
+  
+  crosses:
+    - pair: "EUR/JPY"
+      name: "Euro / Japanese Yen"
+      
+    - pair: "EUR/GBP"
+      name: "Euro / British Pound"
+      
+    - pair: "EUR/CHF"
+      name: "Euro / Swiss Franc"
+
+precious_metals:
+  - name: "Gold"
+    symbol: "XAU"
+    unit: "troy ounce"
+    exchanges:
+      - "COMEX"
+      - "LBMA"
+    
+  - name: "Silver"
+    symbol: "XAG"
+    unit: "troy ounce"
+    exchanges:
+      - "COMEX"
+      - "LBMA"
+    
+  - name: "Platinum"
+    symbol: "XPT"
+    unit: "troy ounce"
+    exchanges:
+      - "NYMEX"
+      - "LPPM"
+    
+  - name: "Palladium"
+    symbol: "XPD"
+    unit: "troy ounce"
+    exchanges:
+      - "NYMEX"
+      - "LPPM"
+
+# Volatility thresholds
+volatility_thresholds:
+  fx:
+    low: 0.5       # 0.5% daily move
+    medium: 1.0    # 1.0% daily move
+    high: 2.0      # 2.0% daily move
+  
+  metals:
+    low: 1.0       # 1% daily move
+    medium: 2.5    # 2.5% daily move
+    high: 5.0      # 5% daily move
+
+# Central bank events
+cb_events:
+  - "interest rate decision"
+  - "monetary policy statement"
+  - "quantitative easing"
+  - "forward guidance"
+  - "currency intervention"
+  - "reserve requirements"

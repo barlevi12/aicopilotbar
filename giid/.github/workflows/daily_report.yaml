@@ -1,0 +1,63 @@
+name: Daily Intelligence Report
+
+on:
+  schedule:
+    # Run at 6 AM Jerusalem time (3 AM UTC during winter, 4 AM UTC during summer)
+    - cron: '0 3 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          cd giid
+          pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Generate Daily Brief
+        run: |
+          cd giid
+          python src/main.py
+        env:
+          TZ: 'Asia/Jerusalem'
+      
+      - name: Upload Report as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-brief-${{ github.run_number }}
+          path: giid/reports/daily_brief_*.md
+          retention-days: 90
+      
+      - name: Upload Events Data
+        uses: actions/upload-artifact@v4
+        with:
+          name: events-data-${{ github.run_number }}
+          path: giid/data/events_*.json
+          retention-days: 90
+      
+      - name: Upload Logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: giid-logs-${{ github.run_number }}
+          path: giid/giid.log
+          retention-days: 30
+      
+      - name: Summary
+        if: success()
+        run: |
+          echo "✅ Daily Intelligence Report Generated Successfully"
+          echo "📊 Check artifacts for the latest report and data"
+          echo "🕐 Generated at: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"

@@ -1,0 +1,95 @@
+# Watchlists Configuration
+# Sectors, tickers, and keywords to monitor
+
+sectors:
+  energy:
+    name: "Energy"
+    keywords:
+      - "oil exploration"
+      - "gas production"
+      - "energy infrastructure"
+      - "LNG"
+      - "petroleum"
+      - "offshore drilling"
+    tickers:
+      - "XLE"
+      - "XOP"
+      - "OIH"
+    
+  uranium:
+    name: "Uranium"
+    keywords:
+      - "uranium mining"
+      - "nuclear fuel"
+      - "enrichment facility"
+      - "nuclear power"
+      - "yellowcake"
+    tickers:
+      - "URA"
+      - "URNM"
+      - "CCJ"
+    
+  critical_minerals:
+    name: "Critical Minerals"
+    keywords:
+      - "lithium mining"
+      - "rare earth elements"
+      - "cobalt"
+      - "nickel"
+      - "graphite"
+      - "copper"
+      - "critical minerals"
+    tickers:
+      - "LIT"
+      - "REMX"
+      - "PICK"
+    
+  satellites:
+    name: "Satellites & Space"
+    keywords:
+      - "satellite"
+      - "space infrastructure"
+      - "launch services"
+      - "orbital systems"
+      - "ground station"
+    tickers:
+      - "UFO"
+      - "ARKX"
+    
+  financials:
+    name: "Financials"
+    keywords:
+      - "banking"
+      - "investment banking"
+      - "asset management"
+      - "credit facility"
+      - "capital markets"
+    tickers:
+      - "XLF"
+      - "KBE"
+      - "KRE"
+
+# Geographic focus areas
+regions:
+  - "Middle East"
+  - "Persian Gulf"
+  - "Red Sea"
+  - "Suez Canal"
+  - "Strait of Hormuz"
+  - "South China Sea"
+  - "Arctic"
+  - "Emerging Markets"
+  - "European Union"
+
+# Event types to monitor
+event_types:
+  - "merger_acquisition"
+  - "regulatory_approval"
+  - "license_grant"
+  - "sanctions"
+  - "rating_change"
+  - "ipo_announcement"
+  - "debt_issuance"
+  - "facility_closure"
+  - "production_halt"
+  - "geopolitical_event"

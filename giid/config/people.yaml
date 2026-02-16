@@ -1,0 +1,108 @@
+# People & Decision Makers Configuration
+# Key individuals to track
+
+central_bankers:
+  - name: "Jerome Powell"
+    title: "Chair"
+    institution: "Federal Reserve"
+    region: "United States"
+    
+  - name: "Christine Lagarde"
+    title: "President"
+    institution: "European Central Bank"
+    region: "Europe"
+    
+  - name: "Kazuo Ueda"
+    title: "Governor"
+    institution: "Bank of Japan"
+    region: "Japan"
+    
+  - name: "Andrew Bailey"
+    title: "Governor"
+    institution: "Bank of England"
+    region: "United Kingdom"
+
+regulators:
+  - name: "Gary Gensler"
+    title: "Chair"
+    institution: "Securities and Exchange Commission"
+    region: "United States"
+    
+  - name: "Michael Barr"
+    title: "Vice Chair for Supervision"
+    institution: "Federal Reserve"
+    region: "United States"
+    
+  - name: "Martin Gruenberg"
+    title: "Chairman"
+    institution: "FDIC"
+    region: "United States"
+
+energy_executives:
+  - name: "Darren Woods"
+    title: "CEO"
+    institution: "ExxonMobil"
+    sector: "Energy"
+    
+  - name: "Mike Wirth"
+    title: "CEO"
+    institution: "Chevron"
+    sector: "Energy"
+    
+  - name: "Amin Nasser"
+    title: "CEO"
+    institution: "Saudi Aramco"
+    sector: "Energy"
+    
+  - name: "Bernard Looney"
+    title: "CEO"
+    institution: "BP"
+    sector: "Energy"
+
+financial_executives:
+  - name: "Jamie Dimon"
+    title: "CEO"
+    institution: "JPMorgan Chase"
+    sector: "Financials"
+    
+  - name: "David Solomon"
+    title: "CEO"
+    institution: "Goldman Sachs"
+    sector: "Financials"
+    
+  - name: "Brian Moynihan"
+    title: "CEO"
+    institution: "Bank of America"
+    sector: "Financials"
+    
+  - name: "Jane Fraser"
+    title: "CEO"
+    institution: "Citigroup"
+    sector: "Financials"
+
+geopolitical_leaders:
+  - name: "Antony Blinken"
+    title: "Secretary of State"
+    institution: "US State Department"
+    region: "United States"
+    
+  - name: "Lloyd Austin"
+    title: "Secretary of Defense"
+    institution: "US Department of Defense"
+    region: "United States"
+    
+  - name: "Janet Yellen"
+    title: "Secretary of the Treasury"
+    institution: "US Department of Treasury"
+    region: "United States"
+
+# Keywords for people tracking
+keywords:
+  - "announced"
+  - "stated"
+  - "testified"
+  - "warned"
+  - "resigned"
+  - "appointed"
+  - "promoted"
+  - "dismissed"
